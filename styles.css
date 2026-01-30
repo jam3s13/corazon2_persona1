@@ -1,0 +1,113 @@
+body, html {
+    margin: 0; padding: 0;
+    width: 100%; height: 100%;
+    overflow: hidden; background-color: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#overlay {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #000;
+    display: flex; justify-content: center; align-items: center;
+    z-index: 100;
+}
+
+#startBtn {
+    padding: 18px 40px;
+    font-size: 1.4rem; /* Más grande para celular */
+    color: #fff;
+    background: transparent;
+    border: 3px solid #ff007f;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff007f;
+    animation: pulse 2s infinite;
+    -webkit-tap-highlight-color: transparent; /* Quita el cuadro azul al tocar */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 15px #ff007f; }
+    50% { transform: scale(1.1); box-shadow: 0 0 35px #ff007f; }
+    100% { transform: scale(1); box-shadow: 0 0 15px #ff007f; }
+}
+
+canvas {
+    display: block; position: absolute;
+    top: 0; left: 0; z-index: 1;
+}
+
+.main-text {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; text-align: center;
+    pointer-events: none; width: 85%;
+}
+
+.main-text h1 {
+    color: #fff; font-size: 2.2rem;
+    text-shadow: 0 0 15px #ff007f, 0 0 30px #ff007f;
+    margin: 0 0 10px 0; line-height: 1.2;
+}
+
+.main-text p {
+    color: #ffd700; font-size: 1.1rem;
+    text-shadow: 0 0 5px #ffd700; font-style: italic;
+    margin: 0;
+}
+
+/* Ajustes específicos para pantallas pequeñas */
+@media (max-width: 480px) {
+    .main-text h1 { font-size: 1.6rem; }
+    .main-text p { font-size: 0.9rem; }
+    #startBtn { font-size: 1.1rem; padding: 15px 30px; }
+}
+
+/* ... (manten tu CSS anterior y reemplaza o añade estas partes) ... */
+
+.main-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Mantiene el centrado base */
+    z-index: 10;
+    text-align: center;
+    pointer-events: none;
+    width: 90%;
+    
+    /* APLICAMOS LA ANIMACIÓN */
+    /* 4s es la duración, infinite para que no pare, ease-in-out para suavidad */
+    animation: zoomInOut 4s infinite ease-in-out;
+}
+
+@keyframes zoomInOut {
+    0% {
+        /* Estado inicial: tamaño normal */
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        /* Estado intermedio: se acerca (crece un 15%) */
+        transform: translate(-50%, -50%) scale(1.15);
+        text-shadow: 0 0 20px #ff007f, 0 0 40px #ff007f, 0 0 60px #ff007f;
+    }
+    100% {
+        /* Retorno al estado inicial */
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.main-text h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 40px #ff007f;
+    margin-bottom: 10px;
+    transition: text-shadow 0.5s; /* Suaviza el cambio de brillo */
+}
+
+/* Ajuste para que el párrafo también acompañe el estilo */
+.main-text p {
+    color: #ffd700;
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px #ffd700;
+    font-style: italic;
+}
