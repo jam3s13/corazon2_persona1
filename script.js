@@ -57,7 +57,7 @@ class HeartParticle {
         this.opacity = Math.sin(Date.now() * 0.001 + this.t) * 0.5 + 0.5;
     }
     draw() {
-        ctx.fillStyle = `rgba(255, 20, 147, ${this.opacity})`;
+        ctx.fillStyle = `rgba(255, 0, 0, ${this.opacity})`;
         ctx.shadowBlur = 8; ctx.shadowColor = "#DC143C";
         ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill(); ctx.shadowBlur = 0;
