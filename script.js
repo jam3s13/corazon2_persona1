@@ -19,10 +19,10 @@ const messages = [
     "Brillas intensamente",
     "Mi amor eterno",
     "Eres mi estrella favorita",
-    "Juntos por siempre",
+    "Mi lugar favorito en el mundo es contigo",
     "Eres la luz de mi vida",
     "Eres una en un millón",
-    "Te encontré"
+    "Contigo, cada momento es mágico"
 ];
 
 function resize() {
